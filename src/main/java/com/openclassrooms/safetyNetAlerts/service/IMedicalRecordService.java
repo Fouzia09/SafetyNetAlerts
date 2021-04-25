@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
-public interface MedicalRecordServiceI {
+public interface IMedicalRecordService {
 
 	List<MedicalRecord> getListMedicalRecords();
 

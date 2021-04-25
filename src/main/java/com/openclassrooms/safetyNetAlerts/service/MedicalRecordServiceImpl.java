@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
-public class MedicalRecordServiceImpl implements MedicalRecordServiceI {
+public class MedicalRecordServiceImpl implements IMedicalRecordService {
 
 	@Override
 	public List<MedicalRecord> getListMedicalRecords() {
