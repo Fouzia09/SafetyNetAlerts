@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.openclassrooms.safetyNetAlerts.dao.IPersonDao;
 import com.openclassrooms.safetyNetAlerts.dao.PersonDaoImpl;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
@@ -13,49 +12,38 @@ import com.openclassrooms.safetyNetAlerts.model.Person;
 public class PersonServiceImpl implements IPersonService {
 
 	@Autowired
-	private IPersonDao personDAO;
+	private PersonDaoImpl personDao;
 
 	@Override
-	public List<Person> findAll() throws Exception {
-		List<Person> listPersons = null;
+	public List<Person> findAll() {
 
-		personDAO = new PersonDaoImpl(listPersons);
-		listPersons = personDAO.findAll();
-
-		return listPersons;
+		return personDao.findAll();
 	}
 
 	@Override
-	public Person findById(String address) throws Exception {
-		Person person = new Person();
-		List<Person> listPersons = null;
-		personDAO = new PersonDaoImpl(listPersons);
-		person = personDAO.findById(address);
+	public Person findById(String address) {
 
-		return person;
+		return personDao.findById(address);
 	}
 
 	@Override
-	public List<Person> save(Person person) throws Exception {
+	public List<Person> save(Person person) {
 
-		List<Person> listPerson = null;
-		personDAO = new PersonDaoImpl(listPerson);
-		listPerson = personDAO.save(person);
-		return listPerson;
+		personDao.save(person);
+
+		return personDao.findAll();
 	}
 
 	@Override
-	public Person update(String address, Person person) throws Exception {
-		List<Person> listPerson = null;
-		personDAO = new PersonDaoImpl(listPerson);
-		return personDAO.update(address, person);
+	public Person update(String address, Person person) {
+
+		return personDao.update(address, person);
 	}
 
 	@Override
-	public List<Person> deleteById(String id) throws Exception {
-		List<Person> listPerson = null;
-		personDAO = new PersonDaoImpl(listPerson);
-		personDAO.deleteById(id);
-		return personDAO.findAll();
+	public List<Person> deleteById(String id) {
+
+		personDao.deleteById(id);
+		return personDao.findAll();
 	}
 }

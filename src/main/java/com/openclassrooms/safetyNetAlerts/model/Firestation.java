@@ -25,4 +25,10 @@ public class Firestation {
 		this.station = station;
 	}
 
+	@Override
+	public String toString() {
+
+		return "Persons [address=" + address + ", station=" + station + "]";
+	}
+
 }

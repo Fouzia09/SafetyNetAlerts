@@ -1,31 +1,40 @@
 package com.openclassrooms.safetyNetAlerts.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.openclassrooms.safetyNetAlerts.dao.FirestationDaoImpl;
 import com.openclassrooms.safetyNetAlerts.model.Firestation;
 
+@Service
 public class FireStationServiceImpl implements IFireStationService {
+
+	@Autowired
+	private FirestationDaoImpl FirestationDao;
 
 	@Override
 	public Firestation getFirestation(String address) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return FirestationDao.findById(address);
 	}
 
 	@Override
 	public Firestation postFirestation(Firestation firestation) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return firestation;
 	}
 
 	@Override
 	public Firestation putFirestation(Firestation firestation) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return FirestationDao.update(null, firestation);
 	}
 
 	@Override
-	public Firestation deleteFirestation(String address) {
-		// TODO Auto-generated method stub
-		return null;
+	public Firestation deleteFirestation(String id) {
+
+		FirestationDao.deleteById(id);
+		return FirestationDao.findById(id);
 	}
 
 }

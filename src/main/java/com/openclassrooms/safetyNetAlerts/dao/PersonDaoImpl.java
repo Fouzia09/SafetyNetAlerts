@@ -89,6 +89,7 @@ public class PersonDaoImpl implements IPersonDao {
 
 		for (Person updatePerson : persons) {
 			if ((updatePerson.getFirstName()).equals(firstNameAndlastName)) {
+				updatePerson.setLastName(person.getLastName());
 				updatePerson.setAddress(person.getAddress());
 				updatePerson.setCity(person.getCity());
 				updatePerson.setEmail(person.getEmail());
