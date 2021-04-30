@@ -3,8 +3,10 @@ package com.openclassrooms.safetyNetAlerts.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.openclassrooms.safetyNetAlerts.json.DataReaderJson;
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
 @Repository
@@ -16,8 +18,10 @@ public class MedicalRecordDaoImpl implements IMedicalRecordDao {
 
 	}
 
-	public MedicalRecordDaoImpl(List<MedicalRecord> medicalRecords) {
+	@Autowired
+	public MedicalRecordDaoImpl(List<MedicalRecord> medicalRecords) throws Exception {
 		super();
+		medicalRecords = new DataReaderJson().getData().getMedicalRecords();
 		MedicalRecords = medicalRecords;
 	}
 

@@ -9,24 +9,21 @@ import com.openclassrooms.safetyNetAlerts.dao.PersonDaoImpl;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
 @Service
-public class PersonServiceImpl implements IPersonService {
+public class PersonServiceImpl {
 
 	@Autowired
 	private PersonDaoImpl personDao;
 
-	@Override
 	public List<Person> findAll() {
 
 		return personDao.findAll();
 	}
 
-	@Override
 	public Person findById(String address) {
 
 		return personDao.findById(address);
 	}
 
-	@Override
 	public List<Person> save(Person person) {
 
 		personDao.save(person);
@@ -34,13 +31,11 @@ public class PersonServiceImpl implements IPersonService {
 		return personDao.findAll();
 	}
 
-	@Override
 	public Person update(String address, Person person) {
 
 		return personDao.update(address, person);
 	}
 
-	@Override
 	public List<Person> deleteById(String id) {
 
 		personDao.deleteById(id);

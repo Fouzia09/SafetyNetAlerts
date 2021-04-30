@@ -11,9 +11,9 @@ import com.openclassrooms.safetyNetAlerts.model.Firestation;
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
-public class DataReaderService {
+public class DataReaderJson {
 
-	private static final Logger logger = LogManager.getLogger(DataReaderService.class);
+	private static final Logger logger = LogManager.getLogger(DataReaderJson.class);
 	private List<Person> persons;
 	private List<Firestation> firestations;
 	private List<MedicalRecord> medicalRecords;

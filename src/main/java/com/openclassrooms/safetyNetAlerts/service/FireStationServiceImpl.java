@@ -1,5 +1,7 @@
 package com.openclassrooms.safetyNetAlerts.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,12 @@ public class FireStationServiceImpl implements IFireStationService {
 
 		FirestationDao.deleteById(id);
 		return FirestationDao.findById(id);
+	}
+
+	@Override
+	public List<Firestation> getAllFirestation() {
+
+		return FirestationDao.findAll();
 	}
 
 }

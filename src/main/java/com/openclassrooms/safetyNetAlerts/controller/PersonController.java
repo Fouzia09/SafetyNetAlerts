@@ -14,22 +14,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.openclassrooms.safetyNetAlerts.model.Person;
-import com.openclassrooms.safetyNetAlerts.service.IPersonService;
+import com.openclassrooms.safetyNetAlerts.service.PersonServiceImpl;
 
 @RestController
 
 public class PersonController {
 
-	@GetMapping(value = "/toto")
-	public String getToto() {
-		return "hello";
-	}
-
 	private static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(PersonController.class);
 	@Autowired
 	private ObjectMapper mapper;
 	@Autowired
-	private IPersonService personService;
+	private PersonServiceImpl personService;
+
+	@GetMapping(value = "/toto")
+	public String getToto() {
+		return "hello";
+	}
 
 	@GetMapping(value = "/person")
 	public String showAllPersons() throws Exception {

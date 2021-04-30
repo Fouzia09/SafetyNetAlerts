@@ -3,9 +3,10 @@ package com.openclassrooms.safetyNetAlerts.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.openclassrooms.safetyNetAlerts.json.DataReaderService;
+import com.openclassrooms.safetyNetAlerts.json.DataReaderJson;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
 @Repository
@@ -17,9 +18,10 @@ public class PersonDaoImpl implements IPersonDao {
 
 	}
 
+	@Autowired
 	public PersonDaoImpl(List<Person> person) throws Exception {
 		super();
-		person = new DataReaderService().getData().getPersons();
+		person = new DataReaderJson().getData().getPersons();
 		this.persons = person;
 	}
 
@@ -33,7 +35,7 @@ public class PersonDaoImpl implements IPersonDao {
 	public Person findById(String firstNameAndlastName) {
 
 		for (Person person : persons) {
-			if ((person.getFirstName()).equals(firstNameAndlastName)) {
+			if ((person.getfirstNameAndlastName()).equals(firstNameAndlastName)) {
 				return person;
 			}
 		}
@@ -88,8 +90,7 @@ public class PersonDaoImpl implements IPersonDao {
 	public Person update(String firstNameAndlastName, Person person) {
 
 		for (Person updatePerson : persons) {
-			if ((updatePerson.getFirstName()).equals(firstNameAndlastName)) {
-				updatePerson.setLastName(person.getLastName());
+			if ((updatePerson.getfirstNameAndlastName()).equals(firstNameAndlastName)) {
 				updatePerson.setAddress(person.getAddress());
 				updatePerson.setCity(person.getCity());
 				updatePerson.setEmail(person.getEmail());
@@ -105,6 +106,6 @@ public class PersonDaoImpl implements IPersonDao {
 	public void deleteById(String firstNameAndlastName) {
 
 		List<Person> deletePerson = persons;
-		deletePerson.removeIf(person -> person.getFirstName().equals(firstNameAndlastName));
+		deletePerson.removeIf(person -> person.getfirstNameAndlastName().equals(firstNameAndlastName));
 	}
 }

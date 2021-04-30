@@ -1,8 +1,12 @@
 package com.openclassrooms.safetyNetAlerts.service;
 
+import java.util.List;
+
 import com.openclassrooms.safetyNetAlerts.model.Firestation;
 
 public interface IFireStationService {
+
+	public List<Firestation> getAllFirestation() throws Exception;
 
 	Firestation getFirestation(String address);
 
@@ -10,6 +14,6 @@ public interface IFireStationService {
 
 	Firestation putFirestation(Firestation firestation);
 
-	Firestation deleteFirestation(String address);
+	Firestation deleteFirestation(String id);
 
 }

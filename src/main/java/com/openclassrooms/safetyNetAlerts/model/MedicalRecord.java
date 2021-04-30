@@ -13,8 +13,6 @@ public class MedicalRecord {
 	private Date birthdate;
 	private List<String> medications;
 	private List<String> allergies;
-	/* @JsonIgnore */
-	private String firstNameAndlastName;
 
 	public MedicalRecord() {
 
@@ -27,7 +25,7 @@ public class MedicalRecord {
 		this.birthdate = birthdate;
 		this.medications = medications;
 		this.allergies = allergies;
-		this.firstNameAndlastName = firstName + lastName;
+
 	}
 
 	public String getFirstName() {
@@ -78,16 +76,6 @@ public class MedicalRecord {
 	public void setAllergies(List<String> allergies) {
 
 		this.allergies = allergies;
-	}
-
-	public String getFirstNameAndlastName() {
-
-		return firstNameAndlastName;
-	}
-
-	public void setFirstNameAndlastName(String firstNameAndlastName) {
-
-		this.firstNameAndlastName = firstNameAndlastName;
 	}
 
 }
