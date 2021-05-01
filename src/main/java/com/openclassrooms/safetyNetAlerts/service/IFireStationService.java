@@ -6,7 +6,7 @@ import com.openclassrooms.safetyNetAlerts.model.Firestation;
 
 public interface IFireStationService {
 
-	public List<Firestation> getAllFirestation() throws Exception;
+	public List<Firestation> getAllFirestation();
 
 	Firestation getFirestation(String address);
 
@@ -15,5 +15,9 @@ public interface IFireStationService {
 	Firestation putFirestation(Firestation firestation);
 
 	Firestation deleteFirestation(String id);
+
+	Firestation addFirestation(Firestation firestation);
+
+	public List<Firestation> listFirestation();
 
 }

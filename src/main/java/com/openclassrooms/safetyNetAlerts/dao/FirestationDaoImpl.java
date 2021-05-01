@@ -1,27 +1,19 @@
 package com.openclassrooms.safetyNetAlerts.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.openclassrooms.safetyNetAlerts.json.DataReaderJson;
 import com.openclassrooms.safetyNetAlerts.model.Firestation;
 
 @Repository
 public class FirestationDaoImpl implements IFirestationDao {
 
-	private List<Firestation> firestations;
+	private List<Firestation> firestations = new ArrayList<Firestation>();
 
 	public FirestationDaoImpl() {
 
-	}
-
-	@Autowired
-	public FirestationDaoImpl(List<Firestation> firestation) throws Exception {
-		super();
-		firestation = new DataReaderJson().getData().getFirestations();
-		this.firestations = firestation;
 	}
 
 	@Override
@@ -75,4 +67,18 @@ public class FirestationDaoImpl implements IFirestationDao {
 		deleteFirestation.removeIf(firestation -> firestation.getAddress().equals(firestationAddress));
 
 	}
+
+	@Override
+	public Firestation addFirestation(Firestation firestation) {
+		firestations.add(firestation);
+		return new Firestation();
+
+	}
+
+	@Override
+	public List<Firestation> listFirestation() {
+
+		return firestations;
+	}
+
 }

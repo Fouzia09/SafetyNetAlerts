@@ -19,4 +19,8 @@ public interface IMedicalRecordDao {
 	public MedicalRecord update(String firstNameAndlastName, MedicalRecord medicalRecord);
 
 	public void deleteById(String firstNameAndlastName);
+
+	public MedicalRecord addMedicalRecord(MedicalRecord medicalRecord);
+
+	public List<MedicalRecord> listMedicalRecord();
 }

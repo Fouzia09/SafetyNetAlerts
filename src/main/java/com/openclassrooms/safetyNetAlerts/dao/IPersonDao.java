@@ -22,4 +22,8 @@ public interface IPersonDao {
 
 	public void deleteById(String firstNameAndlastName);
 
+	public Person addPerson(Person person);
+
+	public List<Person> listPerson();
+
 }

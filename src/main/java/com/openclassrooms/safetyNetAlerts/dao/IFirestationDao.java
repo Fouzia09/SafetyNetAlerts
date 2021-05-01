@@ -17,4 +17,9 @@ public interface IFirestationDao {
 	public Firestation update(String firestationAddress, Firestation firestation);
 
 	public void deleteById(String firestationAddress);
+
+	public Firestation addFirestation(Firestation firestation);
+
+	public List<Firestation> listFirestation();
+
 }

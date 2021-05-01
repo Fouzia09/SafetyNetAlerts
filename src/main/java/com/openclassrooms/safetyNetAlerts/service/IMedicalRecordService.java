@@ -16,4 +16,8 @@ public interface IMedicalRecordService {
 
 	MedicalRecord postMedicalRecord(MedicalRecord medicalRecordToPost);
 
+	MedicalRecord addMedicalRecord(MedicalRecord medicalRecord);
+
+	List<MedicalRecord> listMedicalrecord();
+
 }

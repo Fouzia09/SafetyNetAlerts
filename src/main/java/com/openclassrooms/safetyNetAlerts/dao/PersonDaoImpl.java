@@ -3,26 +3,17 @@ package com.openclassrooms.safetyNetAlerts.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.openclassrooms.safetyNetAlerts.json.DataReaderJson;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
 @Repository
 public class PersonDaoImpl implements IPersonDao {
 
-	private List<Person> persons;
+	private List<Person> persons = new ArrayList<Person>();
 
 	public PersonDaoImpl() {
 
-	}
-
-	@Autowired
-	public PersonDaoImpl(List<Person> person) throws Exception {
-		super();
-		person = new DataReaderJson().getData().getPersons();
-		this.persons = person;
 	}
 
 	@Override
@@ -107,5 +98,17 @@ public class PersonDaoImpl implements IPersonDao {
 
 		List<Person> deletePerson = persons;
 		deletePerson.removeIf(person -> person.getfirstNameAndlastName().equals(firstNameAndlastName));
+	}
+
+	@Override
+	public Person addPerson(Person person) {
+		persons.add(person);
+		return new Person();
+
+	}
+
+	@Override
+	public List<Person> listPerson() {
+		return persons;
 	}
 }

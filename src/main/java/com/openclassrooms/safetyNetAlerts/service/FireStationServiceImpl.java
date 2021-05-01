@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.openclassrooms.safetyNetAlerts.dao.FirestationDaoImpl;
+import com.openclassrooms.safetyNetAlerts.dao.IFirestationDao;
 import com.openclassrooms.safetyNetAlerts.model.Firestation;
 
 @Service
 public class FireStationServiceImpl implements IFireStationService {
 
 	@Autowired
-	private FirestationDaoImpl FirestationDao;
+	private IFirestationDao FirestationDao;
 
 	@Override
 	public Firestation getFirestation(String address) {
@@ -43,6 +43,18 @@ public class FireStationServiceImpl implements IFireStationService {
 	public List<Firestation> getAllFirestation() {
 
 		return FirestationDao.findAll();
+	}
+
+	@Override
+	public Firestation addFirestation(Firestation firestation) {
+		return FirestationDao.addFirestation(firestation);
+
+	}
+
+	@Override
+	public List<Firestation> listFirestation() {
+
+		return FirestationDao.listFirestation();
 	}
 
 }

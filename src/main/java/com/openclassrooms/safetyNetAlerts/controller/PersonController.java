@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.openclassrooms.safetyNetAlerts.model.Person;
-import com.openclassrooms.safetyNetAlerts.service.PersonServiceImpl;
+import com.openclassrooms.safetyNetAlerts.service.IPersonService;
 
 @RestController
 
@@ -24,7 +24,7 @@ public class PersonController {
 	@Autowired
 	private ObjectMapper mapper;
 	@Autowired
-	private PersonServiceImpl personService;
+	private IPersonService personService;
 
 	@GetMapping(value = "/toto")
 	public String getToto() {

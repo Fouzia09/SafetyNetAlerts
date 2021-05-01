@@ -13,12 +13,11 @@ import com.openclassrooms.safetyNetAlerts.dao.FirestationDaoImpl;
 import com.openclassrooms.safetyNetAlerts.model.Firestation;
 
 public class FirestationDaoTest {
-	private List<Firestation> listFirestation;
 	private FirestationDaoImpl firestationDaoImpl;
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		firestationDaoImpl = new FirestationDaoImpl(listFirestation);
+		firestationDaoImpl = new FirestationDaoImpl();
 	}
 
 	@Test

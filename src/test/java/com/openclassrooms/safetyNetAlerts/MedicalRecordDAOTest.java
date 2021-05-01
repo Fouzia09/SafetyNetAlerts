@@ -13,12 +13,11 @@ import com.openclassrooms.safetyNetAlerts.dao.MedicalRecordDaoImpl;
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
 public class MedicalRecordDAOTest {
-	private List<MedicalRecord> listMedicalrecord;
 	private MedicalRecordDaoImpl medicalRecordDaoImpl;
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		medicalRecordDaoImpl = new MedicalRecordDaoImpl(listMedicalrecord);
+		medicalRecordDaoImpl = new MedicalRecordDaoImpl();
 	}
 
 	@Test

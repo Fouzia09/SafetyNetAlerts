@@ -5,46 +5,59 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.openclassrooms.safetyNetAlerts.dao.MedicalRecordDaoImpl;
+import com.openclassrooms.safetyNetAlerts.dao.IMedicalRecordDao;
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
 @Service
 public class MedicalRecordServiceImpl implements IMedicalRecordService {
 
 	@Autowired
-	private MedicalRecordDaoImpl MedicalRecordDao;
+	private IMedicalRecordDao medicalRecordDao;
 
 	@Override
 	public List<MedicalRecord> getListMedicalRecords() {
 
-		MedicalRecordDao.findByLastName(null);
+		medicalRecordDao.findByLastName(null);
 
-		return MedicalRecordDao.findAll();
+		return medicalRecordDao.findAll();
 	}
 
 	@Override
 	public MedicalRecord getMedicalRecord(String firstName, String lastName) {
 
-		return MedicalRecordDao.findById(lastName);
+		return medicalRecordDao.findById(lastName);
 	}
 
 	@Override
 	public MedicalRecord deleteMedicalRecord(String firstName, String lastName) {
 
-		MedicalRecordDao.deleteById(firstName);
-		return MedicalRecordDao.findById(firstName);
+		medicalRecordDao.deleteById(firstName);
+		return medicalRecordDao.findById(firstName);
 	}
 
 	@Override
 	public MedicalRecord putMedicalRecord(MedicalRecord medicalRecordToPut) {
 
-		return MedicalRecordDao.update(null, medicalRecordToPut);
+		return medicalRecordDao.update(null, medicalRecordToPut);
 	}
 
 	@Override
 	public MedicalRecord postMedicalRecord(MedicalRecord medicalRecordToPost) {
 
 		return medicalRecordToPost;
+	}
+
+	@Override
+	public MedicalRecord addMedicalRecord(MedicalRecord medicalRecord) {
+
+		return medicalRecordDao.addMedicalRecord(medicalRecord);
+
+	}
+
+	@Override
+	public List<MedicalRecord> listMedicalrecord() {
+
+		return medicalRecordDao.listMedicalRecord();
 	}
 
 }

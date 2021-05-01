@@ -13,12 +13,11 @@ import com.openclassrooms.safetyNetAlerts.dao.PersonDaoImpl;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
 public class PersonDaoTest {
-	private List<Person> listPersons;
 	private PersonDaoImpl personDaoImpl;
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		personDaoImpl = new PersonDaoImpl(listPersons);
+		personDaoImpl = new PersonDaoImpl();
 	}
 
 	@Test
