@@ -24,7 +24,7 @@ public class MedicalRecordController {
 	@Autowired
 	private IMedicalRecordService MedicalRecordService;
 
-	@GetMapping(value = "/medicalRecord")
+	@GetMapping(value = "/medicalrecord")
 	public String showAllmedicalrecord() throws Exception {
 
 		return mapper.writeValueAsString(MedicalRecordService.getListMedicalRecords());

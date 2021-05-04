@@ -1,4 +1,4 @@
-package com.openclassrooms.safetyNetAlerts;
+package com.openclassrooms.safetyNetAlerts.dao;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
@@ -9,7 +9,7 @@ import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.openclassrooms.safetyNetAlerts.dao.PersonDaoImpl;
+import com.openclassrooms.safetyNetAlerts.dao.impl.PersonDaoImpl;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
 public class PersonDaoTest {

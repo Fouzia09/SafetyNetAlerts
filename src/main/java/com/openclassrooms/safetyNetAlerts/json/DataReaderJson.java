@@ -47,8 +47,8 @@ public class DataReaderJson {
 		System.out.println(this.node);
 
 		initializePerson();
-		// initializeFireStation();
-		// initializeMedicalRecord();
+		initializeFirestation();
+		initializeMedicalRecord();
 	}
 
 	public void initializePerson() {
@@ -75,20 +75,20 @@ public class DataReaderJson {
 		System.out.println(persons);
 	}
 
-	public void initializeFireStation() {
-		JsonNode nodeFiresStation = this.node.path("firestations");
-		Iterator<JsonNode> listFireStation = nodeFiresStation.elements();
+	public void initializeFirestation() {
+		JsonNode nodeFirestation = this.node.path("firestations");
+		Iterator<JsonNode> listFirestation = nodeFirestation.elements();
 		Firestation firestation;
 		int firestationNumber = 0;
 		ObjectMapper objectMapper = new ObjectMapper();
 
-		while (listFireStation.hasNext()) {
+		while (listFirestation.hasNext()) {
 			try {
-				firestation = objectMapper.treeToValue(nodeFiresStation.get(firestationNumber), Firestation.class);
+				firestation = objectMapper.treeToValue(nodeFirestation.get(firestationNumber), Firestation.class);
 				// person.setFirstName(nodePerson.get(personNumber).get("firstName"));//
 				fireStationService.addFirestation(firestation);
 				firestationNumber++;
-				listFireStation.next();
+				listFirestation.next();
 			} catch (JsonProcessingException e) {
 				e.printStackTrace();
 
@@ -97,22 +97,21 @@ public class DataReaderJson {
 		}
 		List<Firestation> firestations = fireStationService.listFirestation();
 		System.out.println(firestations);
-
 	}
 
 	public void initializeMedicalRecord() {
-		JsonNode nodeMedicalRecord = this.node.path("medicalrecord");
+		JsonNode nodeMedicalRecord = this.node.path("medicalrecords");
 		Iterator<JsonNode> listMedicalRecord = nodeMedicalRecord.elements();
-		MedicalRecord medicalRecord;
+		MedicalRecord medicalrecord;
 		int medicalRecordNumber = 0;
 		ObjectMapper objectMapper = new ObjectMapper();
 
 		while (listMedicalRecord.hasNext()) {
 			try {
-				medicalRecord = objectMapper.treeToValue(nodeMedicalRecord.get(medicalRecordNumber),
+				medicalrecord = objectMapper.treeToValue(nodeMedicalRecord.get(medicalRecordNumber),
 						MedicalRecord.class);
 				// person.setFirstName(nodePerson.get(personNumber).get("firstName"));//
-				medicalRecordService.addMedicalRecord(medicalRecord);
+				medicalRecordService.addMedicalRecord(medicalrecord);
 				medicalRecordNumber++;
 				listMedicalRecord.next();
 			} catch (JsonProcessingException e) {

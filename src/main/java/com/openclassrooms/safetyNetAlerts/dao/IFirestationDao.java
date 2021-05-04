@@ -8,18 +8,18 @@ public interface IFirestationDao {
 
 	public List<Firestation> findAll();
 
-	public Firestation findById(String firestationAddress);
-
-	public List<Firestation> findAddressByStation(int station);
-
 	public List<Firestation> save(Firestation firestation);
 
-	public Firestation update(String firestationAddress, Firestation firestation);
-
-	public void deleteById(String firestationAddress);
+	public void deleteById(String firstNameAndlastName);
 
 	public Firestation addFirestation(Firestation firestation);
 
 	public List<Firestation> listFirestation();
+
+	List<Firestation> findByAddress(String address);
+
+	public Firestation findById(String firestationAddress);
+
+	public Firestation update(String address, Firestation firestation);
 
 }

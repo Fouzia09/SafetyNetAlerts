@@ -1,5 +1,7 @@
 package com.openclassrooms.safetyNetAlerts.controller;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,39 +25,33 @@ public class FireStationController {
 	@Autowired
 	private IFireStationService FireStationService;
 
-	@GetMapping(value = "/firestations")
-	public String showAllfirestation() throws Exception {
+	@GetMapping(value = "/firestation")
+	public List<Firestation> showAllFirestations() {
 
-		return mapper.writeValueAsString(FireStationService.getAllFirestation());
+		return FireStationService.listFirestation();
 	}
 
-	@GetMapping(value = "/firestation/{adress}")
-	public Firestation showFireStationById(@PathVariable String address) throws Exception {
+	@GetMapping(value = "/firestation/{address}")
+	public Firestation showFirestationById(@PathVariable String address) {
 
-		return FireStationService.getFirestation(address);
+		return FireStationService.findById(address);
 	}
 
 	@PostMapping(value = "/firestation")
-	public Firestation postFirestation(@RequestBody Firestation firestation) throws Exception {
+	public List<Firestation> addFirestation(@RequestBody Firestation firestation) {
 
-		Firestation FirestationAdd = FireStationService.postFirestation(firestation);
-
-		return FirestationAdd;
-
+		return FireStationService.save(firestation);
 	}
 
-	@PutMapping(value = "/firestation/{adress")
-	public Firestation updateFireStation(@RequestBody @PathVariable Firestation adress) throws Exception {
+	@PutMapping(value = "/firestation/{address}")
+	public Firestation updateFirestation(@RequestBody Firestation firestation, @PathVariable String address) {
 
-		Firestation FirestationUpdated = FireStationService.putFirestation(adress);
-
-		return FirestationUpdated;
+		return FireStationService.update(address, firestation);
 	}
 
-	@DeleteMapping(value = "/firestation/{id}")
-	public Firestation deleteFireStation(@PathVariable String id) throws Exception {
-		return FireStationService.deleteFirestation(id);
-
+	@DeleteMapping(value = "/firestation/{address}")
+	public void deleteFirestation(@PathVariable String address) {
+		FireStationService.deleteById(address);
 	}
 
 }

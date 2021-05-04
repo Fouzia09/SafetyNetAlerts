@@ -109,9 +109,8 @@ public class Person {
 
 	@Override
 	public String toString() {
-
-		return "Persons [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
-				+ ", zip=" + zip + ", phone=" + phone + ", email=" + email + "]";
+		return getFirstName() + ", " + getLastName() + ", " + getAddress() + ", " + getCity() + ", " + getZip() + ", "
+				+ getPhone() + ", " + getEmail() + "\n";
 	}
 
 }

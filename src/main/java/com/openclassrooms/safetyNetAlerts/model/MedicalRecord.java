@@ -78,4 +78,9 @@ public class MedicalRecord {
 		this.allergies = allergies;
 	}
 
+	@Override
+	public String toString() {
+		return getFirstName() + ", " + getLastName() + ", " + getBirthdate() + ", " + getMedications() + ", "
+				+ getAllergies() + "\n";
+	}
 }

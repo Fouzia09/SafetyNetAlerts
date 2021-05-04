@@ -1,9 +1,9 @@
-package com.openclassrooms.safetyNetAlerts;
+package com.openclassrooms.safetyNetAlerts.service;
 
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-import com.openclassrooms.safetyNetAlerts.service.PersonServiceImpl;
+import com.openclassrooms.safetyNetAlerts.service.impl.PersonServiceImpl;
 
 public class PersonServiceTest {
 

@@ -1,10 +1,11 @@
-package com.openclassrooms.safetyNetAlerts.dao;
+package com.openclassrooms.safetyNetAlerts.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.openclassrooms.safetyNetAlerts.dao.IMedicalRecordDao;
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
 @Repository

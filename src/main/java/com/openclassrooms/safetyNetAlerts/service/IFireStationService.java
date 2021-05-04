@@ -6,18 +6,18 @@ import com.openclassrooms.safetyNetAlerts.model.Firestation;
 
 public interface IFireStationService {
 
-	public List<Firestation> getAllFirestation();
+	public List<Firestation> findAll();
 
-	Firestation getFirestation(String address);
+	public List<Firestation> save(Firestation firestation);
 
-	Firestation postFirestation(Firestation firestation);
+	public List<Firestation> deleteById(String id);
 
-	Firestation putFirestation(Firestation firestation);
-
-	Firestation deleteFirestation(String id);
-
-	Firestation addFirestation(Firestation firestation);
+	public Firestation addFirestation(Firestation firestation);
 
 	public List<Firestation> listFirestation();
+
+	public Firestation findById(String address);
+
+	public Firestation update(String address, Firestation firestation);
 
 }

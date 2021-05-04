@@ -1,4 +1,4 @@
-package com.openclassrooms.safetyNetAlerts.service;
+package com.openclassrooms.safetyNetAlerts.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.openclassrooms.safetyNetAlerts.dao.IMedicalRecordDao;
 import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
+import com.openclassrooms.safetyNetAlerts.service.IMedicalRecordService;
 
 @Service
 public class MedicalRecordServiceImpl implements IMedicalRecordService {

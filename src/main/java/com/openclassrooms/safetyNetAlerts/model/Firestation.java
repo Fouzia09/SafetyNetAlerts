@@ -5,6 +5,16 @@ public class Firestation {
 	private String address;
 	private int station;
 
+	public Firestation() {
+
+	}
+
+	public Firestation(String address, int station) {
+		super();
+		this.address = address;
+		this.station = station;
+	}
+
 	public String getAddress() {
 
 		return address;
@@ -27,8 +37,6 @@ public class Firestation {
 
 	@Override
 	public String toString() {
-
-		return "Persons [address=" + address + ", station=" + station + "]";
+		return getAddress() + ", " + getStation() + "\n";
 	}
-
 }
