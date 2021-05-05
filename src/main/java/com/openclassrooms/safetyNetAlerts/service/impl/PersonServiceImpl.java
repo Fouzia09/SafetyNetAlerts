@@ -16,9 +16,9 @@ public class PersonServiceImpl implements IPersonService {
 	private IPersonDao personDao;
 
 	@Override
-	public List<Person> findAll() {
+	public List<Person> listPerson() {
 
-		return personDao.findAll();
+		return personDao.listPerson();
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class PersonServiceImpl implements IPersonService {
 
 		personDao.save(person);
 
-		return personDao.findAll();
+		return personDao.listPerson();
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class PersonServiceImpl implements IPersonService {
 	public List<Person> deleteById(String id) {
 
 		personDao.deleteById(id);
-		return personDao.findAll();
+		return personDao.listPerson();
 	}
 
 	@Override
@@ -54,9 +54,4 @@ public class PersonServiceImpl implements IPersonService {
 		return personDao.addPerson(person);
 	}
 
-	@Override
-	public List<Person> listPerson() {
-
-		return personDao.listPerson();
-	}
 }

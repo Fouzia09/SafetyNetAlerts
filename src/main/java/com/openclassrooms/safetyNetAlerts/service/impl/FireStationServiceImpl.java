@@ -16,33 +16,6 @@ public class FireStationServiceImpl implements IFireStationService {
 	private IFirestationDao firestationDao;
 
 	@Override
-	public List<Firestation> findAll() {
-
-		return firestationDao.findAll();
-	}
-
-	@Override
-	public List<Firestation> save(Firestation firestation) {
-
-		firestationDao.save(firestation);
-
-		return firestationDao.findAll();
-	}
-
-	@Override
-	public List<Firestation> deleteById(String id) {
-
-		firestationDao.deleteById(id);
-		return firestationDao.findAll();
-	}
-
-	@Override
-	public Firestation addFirestation(Firestation firestation) {
-
-		return firestationDao.addFirestation(firestation);
-	}
-
-	@Override
 	public List<Firestation> listFirestation() {
 
 		return firestationDao.listFirestation();
@@ -57,6 +30,27 @@ public class FireStationServiceImpl implements IFireStationService {
 	@Override
 	public Firestation update(String address, Firestation firestation) {
 		return firestationDao.update(address, firestation);
+	}
+
+	@Override
+	public Firestation addFirestation(Firestation firestation) {
+
+		return firestationDao.addFirestation(firestation);
+	}
+
+	@Override
+	public List<Firestation> save(Firestation firestation) {
+
+		firestationDao.save(firestation);
+
+		return firestationDao.listFirestation();
+	}
+
+	@Override
+	public List<Firestation> deleteById(String id) {
+
+		firestationDao.deleteById(id);
+		return firestationDao.listFirestation();
 	}
 
 }

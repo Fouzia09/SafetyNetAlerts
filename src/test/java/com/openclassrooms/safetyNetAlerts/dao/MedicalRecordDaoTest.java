@@ -25,7 +25,7 @@ public class MedicalRecordDaoTest {
 
 		List<MedicalRecord> listMedicalrecord;
 		listMedicalrecord = new ArrayList<MedicalRecord>();
-		listMedicalrecord = medicalRecordDaoImpl.findAll();
+		listMedicalrecord = medicalRecordDaoImpl.listMedicalRecord();
 		MatcherAssert.assertThat(listMedicalrecord.toString(), containsString("allergies"));
 	}
 }

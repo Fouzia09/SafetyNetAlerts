@@ -16,14 +16,6 @@ public class MedicalRecordServiceImpl implements IMedicalRecordService {
 	private IMedicalRecordDao medicalRecordDao;
 
 	@Override
-	public List<MedicalRecord> getListMedicalRecords() {
-
-		medicalRecordDao.findByLastName(null);
-
-		return medicalRecordDao.findAll();
-	}
-
-	@Override
 	public MedicalRecord getMedicalRecord(String firstName, String lastName) {
 
 		return medicalRecordDao.findById(lastName);

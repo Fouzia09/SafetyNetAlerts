@@ -18,8 +18,7 @@ public class PersonDaoImpl implements IPersonDao {
 	}
 
 	@Override
-	public List<Person> findAll() {
-
+	public List<Person> listPerson() {
 		return persons;
 	}
 
@@ -95,13 +94,6 @@ public class PersonDaoImpl implements IPersonDao {
 	}
 
 	@Override
-	public void deleteById(String firstNameAndlastName) {
-
-		List<Person> deletePerson = persons;
-		deletePerson.removeIf(person -> person.getfirstNameAndlastName().equals(firstNameAndlastName));
-	}
-
-	@Override
 	public Person addPerson(Person person) {
 		persons.add(person);
 		return new Person();
@@ -109,7 +101,10 @@ public class PersonDaoImpl implements IPersonDao {
 	}
 
 	@Override
-	public List<Person> listPerson() {
-		return persons;
+	public void deleteById(String firstNameAndlastName) {
+
+		List<Person> deletePerson = persons;
+		deletePerson.removeIf(person -> person.getfirstNameAndlastName().equals(firstNameAndlastName));
 	}
+
 }

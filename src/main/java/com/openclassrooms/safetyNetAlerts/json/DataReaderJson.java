@@ -47,8 +47,8 @@ public class DataReaderJson {
 		System.out.println(this.node);
 
 		initializePerson();
-		initializeFirestation();
-		initializeMedicalRecord();
+		// initializeFirestation();
+		// initializeMedicalRecord();
 	}
 
 	public void initializePerson() {

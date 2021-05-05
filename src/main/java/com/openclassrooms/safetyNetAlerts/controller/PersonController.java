@@ -37,12 +37,6 @@ public class PersonController {
 		return personService.listPerson();
 	}
 
-	@GetMapping(value = "/person/{firstNameAndLastName}")
-	public Person showPersonById(@PathVariable String firstNameAndLastName) {
-
-		return personService.findById(firstNameAndLastName);
-	}
-
 	@PostMapping(value = "/person")
 	public List<Person> addPerson(@RequestBody Person person) {
 

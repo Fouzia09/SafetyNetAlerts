@@ -18,9 +18,19 @@ public class FirestationDaoImpl implements IFirestationDao {
 	}
 
 	@Override
-	public List<Firestation> findAll() {
-
+	public List<Firestation> listFirestation() {
+		System.out.println(firestations);
 		return firestations;
+	}
+
+	@Override
+	public Firestation findById(String firestationAddress) {
+		for (Firestation address : firestations) {
+			if ((address.getAddress()).equals(firestationAddress)) {
+				return address;
+			}
+		}
+		return null;
 	}
 
 	@Override
@@ -43,32 +53,10 @@ public class FirestationDaoImpl implements IFirestationDao {
 	}
 
 	@Override
-	public void deleteById(String adresse) {
-
-		List<Firestation> deleteFirestation = firestations;
-		deleteFirestation.removeIf(firestation -> firestation.getAddress().equals(adresse));
-	}
-
-	@Override
 	public Firestation addFirestation(Firestation firestation) {
 		firestations.add(firestation);
 		return new Firestation();
 
-	}
-
-	@Override
-	public List<Firestation> listFirestation() {
-		return firestations;
-	}
-
-	@Override
-	public Firestation findById(String firestationAddress) {
-		for (Firestation address : firestations) {
-			if ((address.getAddress()).equals(firestationAddress)) {
-				return address;
-			}
-		}
-		return null;
 	}
 
 	@Override
@@ -82,4 +70,10 @@ public class FirestationDaoImpl implements IFirestationDao {
 		return null;
 	}
 
+	@Override
+	public void deleteById(String adresse) {
+
+		List<Firestation> deleteFirestation = firestations;
+		deleteFirestation.removeIf(firestation -> firestation.getAddress().equals(adresse));
+	}
 }

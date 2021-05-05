@@ -25,7 +25,7 @@ public class FirestationDaoTest {
 
 		List<Firestation> listFirestation;
 		listFirestation = new ArrayList<Firestation>();
-		listFirestation = firestationDaoImpl.findAll();
+		listFirestation = firestationDaoImpl.listFirestation();
 		MatcherAssert.assertThat(listFirestation.toString(), containsString("Culver"));
 	}
 

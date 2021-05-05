@@ -6,7 +6,7 @@ import com.openclassrooms.safetyNetAlerts.model.Person;
 
 public interface IPersonDao {
 
-	public List<Person> findAll();
+	public List<Person> listPerson();
 
 	public Person findById(String firstNameAndlastName);
 
@@ -16,14 +16,12 @@ public interface IPersonDao {
 
 	public List<Person> findEmailByCity(String city);
 
+	public Person addPerson(Person person);
+
 	public List<Person> save(Person person);
 
 	public Person update(String firstNameAndlastName, Person person);
 
 	public void deleteById(String firstNameAndlastName);
-
-	public Person addPerson(Person person);
-
-	public List<Person> listPerson();
 
 }

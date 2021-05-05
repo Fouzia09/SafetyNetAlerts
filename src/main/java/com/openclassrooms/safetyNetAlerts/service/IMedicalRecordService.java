@@ -6,11 +6,9 @@ import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
 public interface IMedicalRecordService {
 
-	List<MedicalRecord> getListMedicalRecords();
+	List<MedicalRecord> listMedicalrecord();
 
 	MedicalRecord getMedicalRecord(String firstName, String lastName);
-
-	MedicalRecord deleteMedicalRecord(String firstName, String lastName);
 
 	MedicalRecord putMedicalRecord(MedicalRecord medicalRecordToPut);
 
@@ -18,6 +16,6 @@ public interface IMedicalRecordService {
 
 	MedicalRecord addMedicalRecord(MedicalRecord medicalRecord);
 
-	List<MedicalRecord> listMedicalrecord();
+	MedicalRecord deleteMedicalRecord(String firstName, String lastName);
 
 }

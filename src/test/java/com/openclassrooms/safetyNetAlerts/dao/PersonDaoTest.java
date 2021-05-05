@@ -25,7 +25,7 @@ public class PersonDaoTest {
 
 		List<Person> listPerson;
 		listPerson = new ArrayList<Person>();
-		listPerson = personDaoImpl.findAll();
+		listPerson = personDaoImpl.listPerson();
 		MatcherAssert.assertThat(listPerson.toString(), containsString("John"));
 	}
 

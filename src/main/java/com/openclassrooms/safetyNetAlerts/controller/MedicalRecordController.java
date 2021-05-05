@@ -1,5 +1,7 @@
 package com.openclassrooms.safetyNetAlerts.controller;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,9 +27,9 @@ public class MedicalRecordController {
 	private IMedicalRecordService MedicalRecordService;
 
 	@GetMapping(value = "/medicalrecord")
-	public String showAllmedicalrecord() throws Exception {
+	public List<MedicalRecord> showAllmedicalrecord() throws Exception {
 
-		return mapper.writeValueAsString(MedicalRecordService.getListMedicalRecords());
+		return MedicalRecordService.listMedicalrecord();
 	}
 
 	@GetMapping(value = "/medicalRecord/{adress}")

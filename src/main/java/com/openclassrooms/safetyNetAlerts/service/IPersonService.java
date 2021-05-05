@@ -5,7 +5,8 @@ import java.util.List;
 import com.openclassrooms.safetyNetAlerts.model.Person;
 
 public interface IPersonService {
-	public List<Person> findAll();
+
+	public List<Person> listPerson();
 
 	public Person findById(String address);
 
@@ -16,7 +17,5 @@ public interface IPersonService {
 	public List<Person> deleteById(String id);
 
 	public Person addPerson(Person person);
-
-	public List<Person> listPerson();
 
 }

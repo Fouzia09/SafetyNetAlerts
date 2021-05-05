@@ -6,7 +6,7 @@ import com.openclassrooms.safetyNetAlerts.model.MedicalRecord;
 
 public interface IMedicalRecordDao {
 
-	public List<MedicalRecord> findAll();
+	public List<MedicalRecord> listMedicalRecord();
 
 	public MedicalRecord findById(String firstNameAndlastName);
 
@@ -22,5 +22,4 @@ public interface IMedicalRecordDao {
 
 	public MedicalRecord addMedicalRecord(MedicalRecord medicalRecord);
 
-	public List<MedicalRecord> listMedicalRecord();
 }

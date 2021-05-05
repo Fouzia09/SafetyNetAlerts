@@ -18,11 +18,6 @@ public class MedicalRecordDaoImpl implements IMedicalRecordDao {
 	}
 
 	@Override
-	public List<MedicalRecord> findAll() {
-		return medicalrecords;
-	}
-
-	@Override
 	public MedicalRecord findById(String firstNameAndlastName) {
 		for (MedicalRecord medicalRecord : medicalrecords) {
 			if ((medicalRecord.getFirstName()).equals(firstNameAndlastName)) {
